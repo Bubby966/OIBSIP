@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A beginner-friendly temperature converter for Celsius, Fahrenheit, and Kelvin."
+    />
+    <title>Temperature Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="converter-card" aria-label="Temperature converter">
+        <div class="card-header">
+          <p class="eyebrow">Converter</p>
+          <h1>Temperature Converter</h1>
+        </div>
+
+        <form id="converterForm" novalidate>
+          <div class="field-group">
+            <label for="temperature">Temperature</label>
+            <input
+              id="temperature"
+              name="temperature"
+              type="number"
+              step="any"
+              inputmode="decimal"
+              placeholder="Enter a value"
+              aria-describedby="errorMessage"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="unit">Unit</label>
+            <select id="unit" name="unit">
+              <option value="celsius">Celsius (°C)</option>
+              <option value="fahrenheit">Fahrenheit (°F)</option>
+              <option value="kelvin">Kelvin (K)</option>
+            </select>
+          </div>
+
+          <div class="button-row">
+            <button type="submit" class="btn btn-primary">Convert</button>
+            <button type="button" class="btn btn-secondary" id="clearButton">Clear</button>
+          </div>
+        </form>
+
+        <div class="result-panel" aria-live="polite">
+          <p id="result" class="result-text">Result will appear here.</p>
+          <p id="errorMessage" class="error-message" aria-live="assertive"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
